@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 1. TÍTULO Y DESCRIPCIÓN PARA BUSCADORES -->
+  <title>Boletines del Grupo Regional de América Latina | Memory Studies Association</title>
+  <meta name="description" content="Archivo de los boletines del Grupo Regional de América Latina de la Memory Studies Association (MSA). Noticias, actividades, proyectos, investigaciones y experiencias de sus integrantes.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://americalatinamsa.github.io/boletin/">
+
+  <!-- 2. VISTA PREVIA EN REDES Y MENSAJERÍA -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:site_name" content="Grupo Regional de América Latina, MSA">
+  <meta property="og:title" content="Boletines del Grupo Regional de América Latina, MSA">
+  <meta property="og:description" content="Archivo de los boletines del Grupo Regional de América Latina de la Memory Studies Association.">
+  <meta property="og:url" content="https://americalatinamsa.github.io/boletin/">
+
+  <style>
+    :root {
+      --verde-azulado: #3C7A6F;
+      --verde-profundo: #2F4D47;
+      --verde-claro: #DCEAE6;
+      --terracota-oscuro: #9A5A24;
+      --terracota: #C98A4B;
+      --crema: #F4F2EC;
+      --tinta: #2A2A2A;
+      --gris: #5E5E5E;
+      --blanco: #FFFFFF;
+      --fuente-serif: Georgia, "Times New Roman", serif;
+      --fuente-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--fuente-serif);
+      color: var(--tinta);
+      background-color: var(--blanco);
+      line-height: 1.65;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--verde-azulado);
+      transition: color 0.15s ease-in-out;
+    }
+
+    a:focus-visible, input:focus-visible {
+      outline: 3px solid var(--terracota-oscuro);
+      outline-offset: 2px;
+    }
+
+    .cabecera {
+      background-color: var(--verde-profundo);
+      color: var(--blanco);
+      border-bottom: 6px solid var(--terracota);
+      padding: 3rem 1.25rem 2.5rem;
+    }
+
+    .envoltura {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .cabecera .grupo {
+      font-family: var(--fuente-sans);
+      font-size: 0.95rem;
+      color: var(--verde-claro);
+      margin-bottom: 0.5rem;
+    }
+
+    .cabecera h1 {
+      font-weight: normal;
+      font-size: clamp(2.2rem, 6vw, 3.2rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .cabecera .presentacion {
+      max-width: 38em;
+      color: #EAF1EF;
+      font-size: 1.05rem;
+    }
+
+    main {
+      padding: 2.5rem 1.25rem 3rem;
+    }
+
+    .buscador label {
+      display: block;
+      font-family: var(--fuente-sans);
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--verde-profundo);
+      margin-bottom: 0.4rem;
+    }
+
+    .buscador input {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      font-family: var(--fuente-sans);
+      font-size: 1rem;
+      color: var(--tinta);
+      border: 1px solid #B9C9C4;
+      border-radius: 4px;
+      background: var(--blanco);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .buscador input:focus {
+      border-color: var(--verde-azulado);
+      box-shadow: 0 0 0 3px rgba(60, 122, 111, 0.2);
+    }
+
+    .sin-resultados {
+      display: none;
+      margin-top: 1.5rem;
+      font-family: var(--fuente-sans);
+      color: var(--gris);
+      font-style: italic;
+    }
+
+    .lista {
+      list-style: none;
+      margin-top: 2rem;
+    }
+
+    .boletin {
+      background-color: var(--crema);
+      border-left: 5px solid var(--verde-azulado);
+      padding: 1.5rem 1.5rem 1.6rem;
+      margin-bottom: 1.25rem;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .boletin .numero {
+      font-family: var(--fuente-sans);
+      font-size: 0.9rem;
+      font-weight: bold;
+      color: var(--terracota-oscuro);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .boletin h2 {
+      font-weight: normal;
+      font-size: 1.4rem;
+      line-height: 1.3;
+      color: var(--verde-profundo);
+      margin: 0.3rem 0 0.6rem;
+    }
+
+    .boletin h2 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .boletin h2 a:hover {
+      text-decoration: underline;
+    }
+
+    .boletin .resumen {
+      text-align: justify;
+      hyphens: auto;
+    }
+
+    .boletin .boton {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.2rem;
+      min-height: 44px;
+      line-height: 1.4;
+      font-family: var(--fuente-sans);
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--blanco);
+      background-color: var(--verde-azulado);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.15s ease-in-out;
+    }
+
+    .boletin .boton:hover {
+      background-color: var(--verde-profundo);
+      text-decoration: none;
+    }
+
+    footer {
+      background-color: var(--crema);
+      border-top: 1px solid #DDD8CC;
+      padding: 2.5rem 1.25rem;
+      font-family: var(--fuente-sans);
+      font-size: 0.92rem;
+      color: var(--tinta);
+    }
+
+    footer p {
+      margin-bottom: 0.6rem;
+    }
+
+    footer .redes {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    footer a {
+      color: var(--verde-profundo);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="envoltura">
+    <p class="grupo">Grupo Regional de América Latina, Memory Studies Association (MSA)</p>
+    <h1>Boletines</h1>
+    <p class="presentacion">Los boletines del Grupo Regional de América Latina reúnen noticias, actividades, proyectos, investigaciones y experiencias de sus integrantes.</p>
+  </div>
+</header>
+
+<main>
+  <div class="envoltura">
+    <div class="buscador">
+      <label for="buscar">Buscar en los boletines</label>
+      <input id="buscar" type="search" placeholder="Tema, evento, año o número de boletín..." autocomplete="off" aria-controls="lista">
+    </div>
+
+    <p class="sin-resultados" id="sin-resultados" role="status">Ningún boletín coincide con esa búsqueda. Pruebe con otra palabra.</p>
+
+    <ul class="lista" id="lista">
+      <li class="boletin">
+        <p class="numero">Boletín 3</p>
+        <h2><a href="boletin-03-informativo-2026.html">Boletín informativo del Grupo Regional</a></h2>
+        <p class="resumen">Presentación de la nueva coordinación del grupo, convocatoria para la XI Conferencia Anual de la MSA en la Universidad de Lund (Suecia, junio de 2027), evaluación de la conferencia de Buenos Aires, convocatoria de instituciones anfitrionas para el Cuarto Encuentro Regional en 2028, grupo de estudio y lectura bimensual y Programa Digital de la MSA.</p>
+        <a class="boton" href="boletin-03-informativo-2026.html">Leer el boletín 3</a>
+      </li>
+
+      <li class="boletin">
+        <p class="numero">Boletín 2</p>
+        <h2><a href="boletin-02-conferencia-buenos-aires-2026.html">El Grupo Regional en la X Conferencia Anual de la MSA «Memory and Democracy»</a></h2>
+        <p class="resumen">Resúmenes de los 22 paneles presentados por integrantes del grupo en la Universidad Torcuato Di Tella, Buenos Aires, entre el 28 de julio y el 2 de agosto de 2026, organizados por día y con la participación de 88 investigadoras e investigadores.</p>
+        <a class="boton" href="boletin-02-conferencia-buenos-aires-2026.html">Leer el boletín 2</a>
+      </li>
+
+      <li class="boletin">
+        <p class="numero">Boletín 1</p>
+        <h2><a href="boletin-01-tercer-encuentro-2026.html">Tercer Encuentro del Grupo Regional de América Latina</a></h2>
+        <p class="resumen">Crónica del encuentro realizado el 27 y 28 de julio de 2026 en Buenos Aires, en el IDES y la sede Volta de la EIDAES-UNSAM. Reúne las seis mesas con sus videos y la sección Voces del Encuentro, con entrevistas a participantes.</p>
+        <a class="boton" href="boletin-01-tercer-encuentro-2026.html">Leer el boletín 1</a>
+      </li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <div class="envoltura">
+    <p><strong>Coordinación Grupo Regional de América Latina, MSA</strong></p>
+    <p><a href="mailto:americalatinamsa@gmail.com">americalatinamsa@gmail.com</a></p>
+    <ul class="redes">
+      <li><a href="https://www.facebook.com/GrupoRegionalAmericaLatinaMSA" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+      <li><a href="https://www.instagram.com/msaamericalatina" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://www.youtube.com/@GrupoRegionalAmericaLatinaMSA" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+      <li><a href="https://x.com/AmericaLatMSA" target="_blank" rel="noopener noreferrer">X</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    const campo = document.getElementById('buscar');
+    const items = Array.prototype.slice.call(document.querySelectorAll('#lista .boletin'));
+    const aviso = document.getElementById('sin-resultados');
+
+    function normalizar(texto) {
+      return (texto || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '');
+    }
+
+    campo.addEventListener('input', function () {
+      const q = normalizar(campo.value.trim());
+      let visibles = 0;
+
+      items.forEach(function (li) {
+        const coincide = normalizar(li.textContent).indexOf(q) !== -1;
+        li.style.display = coincide ? '' : 'none';
+        if (coincide) visibles++;
+      });
+
+      aviso.style.display = (visibles === 0) ? 'block' : 'none';
+    });
+  })();
+</script>
+
+</body>
+</html>
